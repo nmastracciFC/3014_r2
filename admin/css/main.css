@@ -1,0 +1,55 @@
+/*COLOURS*/
+/*light grey #d1cfd2
+medium grey #aaa9ad
+Black green #0f2225
+dark green #1e3332
+medium green #4a6861
+light green #a6bfb9*/
+
+body {
+	padding: 3em;
+	background-color: #d1cfd2;
+	font-family: Avenir, sans-serif;
+	color: #fff;
+	
+}
+#loginPage {
+	background-color:#fff;
+	padding: 2em; 
+	/*border: 1px solid #1e3332;*/
+	border-radius: 2em; 
+	box-shadow: 0em 0em 1.7em 0.5em #888;
+}
+#loginPage h1 {
+	font-size:3em;
+}
+#loginForm {
+	background-color: #4a6861;
+	padding: 2em; 
+	border-radius: 1em; 
+}
+#loginForm input {
+	border-radius: 2em; 
+	margin:1em;
+	/*margin-left: 4em;*/
+	padding: 0.8em;
+}
+#loginForm label {
+	margin-right: 4em;
+}
+#loginForm form {
+	margin-left: 1em;
+}
+#button {
+	background-color: #a6bfb9;
+	color: #fff;
+	margin-left: 19em;
+	border-radius: 2em;
+	padding: 0.8em;
+	/*font-size: 1.2em;*/
+}
+.side-bar {
+	width:35%;
+	background-color: #4a6861;
+	padding: 3em;
+}
