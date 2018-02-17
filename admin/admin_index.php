@@ -24,6 +24,10 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 <head>
 	<meta charset="UTF-8">
 	<title>CMS Portal Login</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300|Petit+Formal+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/dzd4epv.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>

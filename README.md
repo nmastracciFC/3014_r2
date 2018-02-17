@@ -1,4 +1,4 @@
-# FIRST RESEARCH ASSIGNMENT #
+# SECOND RESEARCH ASSIGNMENT #
 
 Database is in db folder.
 
@@ -19,4 +19,4 @@ Database is in db folder.
 ##### incrementing mysql tables #####
 
 -https://stackoverflow.com/questions/2762851/increment-a-database-field-by-1
-# 3014_r2
+
