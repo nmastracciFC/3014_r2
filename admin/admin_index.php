@@ -33,6 +33,8 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 </head>
 <body>
 	<div class="triangle"></div>
+	<!-- <div class="triangle2"></div> -->
+	<div class="lipstick"></div>
 	<div class="logo">
 		<img src="images/logo_zou.svg" alt="Zou Lipstick logo">
 		<h1>Your Monthly Lipstick Subscription</h1>
@@ -42,10 +44,10 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 	
 		<h1>Oh Hey, <?php echo $_SESSION['user_name'];?></h1>
 
-		<h2>Looking great today!</h2>
+		<!-- <h2>Looking great today!</h2> -->
 		<h3><?php echo $greeting; ?></h3>
 		<h3><?php echo "The time is " . date("h:ia");?></h3>
-		<h3>Last Login: <?php echo date_create($_SESSION['user_lastlog'])->format('F d, Y  g:ia'); ?> </h3>
+		<h3>Last Login:<br><?php echo date_create($_SESSION['user_lastlog'])->format('F d, Y  g:ia'); ?> </h3>
 		
 	</div>
 		
