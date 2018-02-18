@@ -32,15 +32,21 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 
 </head>
 <body>
+	<div class="triangle"></div>
+	<div class="logo">
+		<img src="images/logo_zou.svg" alt="Zou Lipstick logo">
+		<h1>Your Monthly Lipstick Subscription</h1>
+	</div>
+
 	<div class="side-bar">
 	
-	<h1>Welcome <?php echo $_SESSION['user_name'];?></h1>
+		<h1>Oh Hey, <?php echo $_SESSION['user_name'];?></h1>
 
-
-	<h2>You look beautiful today!</h2>
-	
-	<h2>Last Login: <?php echo date_create($_SESSION['user_lastlog'])->format('F d, Y  g:ia'); ?> </h2>
-	<?php echo $greeting; ?> <?php date_default_timezone_set("America/New_York"); echo "The time is " . date("h:ia");?>
+		<h2>Looking great today!</h2>
+		<h3><?php echo $greeting; ?></h3>
+		<h3><?php echo "The time is " . date("h:ia");?></h3>
+		<h3>Last Login: <?php echo date_create($_SESSION['user_lastlog'])->format('F d, Y  g:ia'); ?> </h3>
+		
 	</div>
 		
 </body>
