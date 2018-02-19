@@ -41,7 +41,6 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 	</div>
 
 	<div class="side-bar">
-	
 		<h1>Oh Hey, <?php echo $_SESSION['user_name'];?></h1>
 
 		<!-- <h2>Looking great today!</h2> -->
@@ -50,6 +49,15 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 		<h3>Last Login:<br><?php echo date_create($_SESSION['user_lastlog'])->format('F d, Y  g:ia'); ?> </h3>
 		
 	</div>
+	<section class="dashboard">
+		<div class="spaced"></div>
+		<div class="dashboard2">
+		<h1>What Would You Like to Do?</h1>
+		<a href="/admin_createuser">Add A Subscriber</a>
+		<a href="/admin_profile">See My Profile</a>
+		</div>
+		
+	</section>
 		
 </body>
 </html>

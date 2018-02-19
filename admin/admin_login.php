@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 	<div class="triangle"></div>
+	<div class="content">
 	<div class="logo">
 		<img src="images/logo_zou.svg" alt="Zou Lipstick logo">
 		<h1>Your Monthly Lipstick Subscription</h1>
@@ -66,5 +67,6 @@ if(isset($_POST['submit'])){
 			</form>
 			</div>
 	</section>
+	</div>
 </body>
 </html>

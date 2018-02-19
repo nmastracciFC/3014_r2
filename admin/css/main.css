@@ -58,11 +58,14 @@ body {
 	top:0;
 	position:absolute;
 	z-index:-3;
-	background-image: url(../images/lipstick-open.jpg);
-	width:1500px;
+	background-image: url(../images/lipstick-open-sm.jpg);
+	width:1200px;
 	/*margin-left:-300px;*/
-	height:600px;
-	/*margin-top:-20em;*/
+	height:480px;
+	/*margin-top:-2em;*/
+}
+.content {
+	width:1000px;
 }
 .to-right {
 	float:right;
@@ -152,3 +155,47 @@ body {
 	margin-bottom:0.7em;
 	/*text-align:center; */
 }
+.spaced {
+	width: 20em;
+	height:7em;
+	display:inline-block;
+	background-color: red;
+
+}
+.dashboard {
+	/*display:block;*/
+	/*background-color: #555;*/
+	/*font-family: "hobo-std",sans-serif;*/
+
+}
+
+.dashboard2 {
+	display:inline;
+	background-color: red;
+}
+.dashboard2 h1 {
+	display:inline;
+	font-family: "hobo-std",sans-serif;
+	font-family
+}
+.dashboard2 a {
+	display:inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
