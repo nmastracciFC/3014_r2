@@ -4,19 +4,15 @@ Database is in db folder.
 
 ### Researched Links ###
 
-##### understanding date syntax/formatting #####
+##### creating user and emailing #####
 
--http://www.php.net/manual/en/function.date.php
+-last semester
 
--http://php.net/manual/en/datetime.format.php
+##### creating password generator #####
 
-##### understanding sessions #####
+-http://php.net/manual/en/function.array-rand.php
 
--http://php.net/manual/en/book.session.php
-
--http://php.net/manual/en/reserved.variables.session.php
-
-##### incrementing mysql tables #####
+##### encrypted password store in database #####
 
 -https://stackoverflow.com/questions/2762851/increment-a-database-field-by-1
 
