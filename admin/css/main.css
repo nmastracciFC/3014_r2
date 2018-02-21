@@ -131,9 +131,9 @@ body {
 }
 
 
-/*admin index page*/
+/*ADMIN INDEX PAGE*/
 .side-bar {
-	width:13em;
+	width:21em;
 	/*background-color: #4a6861;*/
 	padding: 3em;
 }
@@ -158,29 +158,64 @@ body {
 .spaced {
 	width: 20em;
 	height:7em;
-	display:inline-block;
+	/*display:inline-block;*/
 	background-color: red;
 
 }
 .dashboard {
-	/*display:block;*/
+	display:block;
+	padding-left:20em;
 	/*background-color: #555;*/
 	/*font-family: "hobo-std",sans-serif;*/
 
 }
 
 .dashboard2 {
-	display:inline;
-	background-color: red;
+	display:inline-block;
+	/*background-color: red;*/
 }
 .dashboard2 h1 {
-	display:inline;
-	font-family: "hobo-std",sans-serif;
-	font-family
+	font-size: 3em;
+	padding-bottom: 1em;
 }
 .dashboard2 a {
-	display:inline;
+	display:block;
+	padding: 1em;
+	padding-left:2em;
+	text-decoration: none;
+	color:#555;
+	transition: all 0.5s ease;
 }
+.dashboard2 a:hover {
+	font-weight:900;
+	margin-left:0.5em;
+}
+
+
+/*ADMIN CREATE USER PAGE*/
+.addUser {
+	padding-left:20em;
+}
+.addUser h1 {
+	font-size:3em;
+	padding-bottom:1em;
+}
+.addUser input {
+	border-radius: 0.3em; 
+	margin:1em;
+	padding: 0.8em;
+
+}
+.dash-link {
+	font-weight: 900;
+	color: #d892a1;
+}
+.dash-link a {
+	text-decoration: none;
+	color: #d892a1;
+	font-weight: 900;
+}
+
 
 
 

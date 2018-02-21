@@ -4,18 +4,7 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 require_once('phpscripts/config.php');
-date_default_timezone_set("America/New_York");
 confirm_logged_in();
-
-$theHour = date('G');
-
-if ( $theHour >= 3 && $theHour <= 11 ) {
-	$greeting = "Salute the Sun! It's rising JUST for you!";
-} else if ( $theHour >= 12 && $theHour <= 18 ) {
-	$greeting = "Feeling like a nap? It must be the afternoon.";
-} else if ( $theHour >= 19 || $theHour <= 2 ) {
-	$greeting = "My, you're working late! Go to sleep. It's night time!";
-};
 ?>
 
 
@@ -50,11 +39,11 @@ if ( $theHour >= 3 && $theHour <= 11 ) {
 		
 	</div>
 	<section class="dashboard">
-		<div class="spaced"></div>
 		<div class="dashboard2">
 		<h1>What Would You Like to Do?</h1>
-		<a href="/admin_createuser">Add A Subscriber</a>
+		<a href="admin_createuser.php">Add A Subscriber</a>
 		<a href="/admin_profile">See My Profile</a>
+		<a href="phpscripts/caller.php?caller_id=logout">Sign Out</a>
 		</div>
 		
 	</section>
