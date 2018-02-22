@@ -20,7 +20,11 @@ if(isset($_POST['submit'])) {
 	} else {
 		$result = createUser($fname, $username, $password, $email, $userlvl);
 		$message = $result;
+		if(!empty($email)) {
+		$sendEmail = sendMessage($email, $fname, $username, $password);
+	} 
 	}
+
 }
 
 

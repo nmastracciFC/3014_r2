@@ -27,15 +27,15 @@ error_reporting(E_ALL);
 
 
 function sendMessage($email, $fname, $username, $password) {
-	$to = "{$email}"; 
+	$to = $email; 
 	$subj = "ZOU: Your Login info"; 
 	// $extra = "Reply-To: ".$email; 
-	$msg = "Oh Hey, ".$fname."\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$password."\n\n You can  " ;
+	$msg = "Oh Hey, ".$fname."\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$password."\n\n Thank you for your business  " ;
 	
-	// mail($to, $subj, $msg, $extra); 
+	mail($to, $subj, $msg); 
 	// $direct = $direct."?name={$name}";
-	echo $msg;
-	// redirect_to("admin_index.php");
+	// echo $msg;
+	redirect_to("admin_index.php");
 }
 
 
