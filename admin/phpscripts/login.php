@@ -17,8 +17,9 @@
 
  		if($password == $found_user['user_pass'] && ($found_user['user_attempts'] < 3)){
  			$_SESSION['user_id'] = $id; //label user_id equals the variable id
- 		$_SESSION['user_name'] = $found_user['user_fname'];
- 		$_SESSION['user_lastlog'] = $found_user['user_lastlog'];
+	 		$_SESSION['user_fname'] = $found_user['user_fname'];
+	 		$_SESSION['user_lastlog'] = $found_user['user_lastlog'];
+	 		$_SESSION['user_usrn'] = $found_user['user_name'];
 
  		if($user_set && $user_set2){
  			//if they've successfully logged in then update their ip address in the db

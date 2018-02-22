@@ -6,13 +6,15 @@ Database is in db folder.
 
 ##### creating user and emailing #####
 
--last semester
+-last semester example
+
+-
 
 ##### creating password generator #####
 
 -http://php.net/manual/en/function.array-rand.php
 
-##### encrypted password store in database #####
+##### encrypted password stored in database #####
 
--https://stackoverflow.com/questions/2762851/increment-a-database-field-by-1
+-http://php.net/manual/en/faq.passwords.php
 

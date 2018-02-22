@@ -30,7 +30,7 @@ confirm_logged_in();
 	</div>
 
 	<div class="side-bar">
-		<h1>Oh Hey, <?php echo $_SESSION['user_name'];?></h1>
+		<h1>Oh Hey, <?php echo $_SESSION['user_fname'];?></h1>
 
 		<!-- <h2>Looking great today!</h2> -->
 		<h3><?php echo $greeting; ?></h3>
@@ -42,7 +42,7 @@ confirm_logged_in();
 		<div class="dashboard2">
 		<h1>What Would You Like to Do?</h1>
 		<a href="admin_createuser.php">Add A Subscriber</a>
-		<a href="/admin_profile">See My Profile</a>
+		<a href="admin_profile.php">See My Profile/Change Password</a>
 		<a href="phpscripts/caller.php?caller_id=logout">Sign Out</a>
 		</div>
 		
