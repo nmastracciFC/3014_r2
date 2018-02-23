@@ -2,26 +2,30 @@
  function logIn($username, $password, $ip) {
  	require_once('connect.php');
  	$username = mysqli_real_escape_string($link, $username);//this is sanitzation, changes everything to literals
- 	$password = mysqli_real_escape_string($link, $password);
+ 	$password = trim(mysqli_real_escape_string($link, $password));
 
  	$loginuser = "SELECT * FROM tbl_user WHERE user_name = '{$username}'";
- 	$loginpass = "SELECT * FROM tbl_user WHERE user_pass = '{$password}'";
- 	// echo $loginstring;
+ 	// $loginpass = "SELECT * FROM tbl_user WHERE user_pass = '{$password}'";
+
+// password_verify($password, "SELECT * FROM tbl_user WHERE user_pass = '{$password}'");
+ 	// echo $loginpass;
  	$user_set = mysqli_query($link, $loginuser);
- 	$user_set2 = mysqli_query($link, $loginpass);
+ 	// $user_set2 = mysqli_query($link, $loginpass);
+ 	// print_r(mysqli_num_rows($user_set));
 
  	if(mysqli_num_rows($user_set)){
  		//this works as a boolean
  		$found_user = mysqli_fetch_array($user_set,MYSQLI_ASSOC);
  		$id = $found_user['user_id'];//now you have access to the users ID
-
- 		if($password == $found_user['user_pass'] && ($found_user['user_attempts'] < 3)){
+ 		$pass = $found_user['user_pass'];
+ 		
+ 		if(password_verify($password, $found_user['user_pass']) && ($found_user['user_attempts'] < 3)){
  			$_SESSION['user_id'] = $id; //label user_id equals the variable id
 	 		$_SESSION['user_fname'] = $found_user['user_fname'];
 	 		$_SESSION['user_lastlog'] = $found_user['user_lastlog'];
 	 		$_SESSION['user_usrn'] = $found_user['user_name'];
 
- 		if($user_set && $user_set2){
+ 		if($user_set){
  			//if they've successfully logged in then update their ip address in the db
  			$updatestring = "UPDATE tbl_user SET user_ip = '$ip' WHERE user_id = {$id}";
  			$updateLastLogin = "UPDATE tbl_user SET user_lastlog = NOW() WHERE user_id = {$id}";

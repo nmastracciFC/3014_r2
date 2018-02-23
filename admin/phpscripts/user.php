@@ -5,10 +5,14 @@ error_reporting(E_ALL);
 	function createUser($fname, $username, $password, $email, $userlvl) {
 		include('connect.php');
 		//should run the mysqli_real_escape_string here.. this should all be cleaned and escaped so no quotes happen
+		$hashPassword = password_hash($password, PASSWORD_DEFAULT);
+		// echo var_dump(password_verify($password,$hashPassword));
+		// // echo $password;
+		// die;
 
 		//very important that this is stated correctly
 		//null means do whatever it is you want to do on your end mysql
-		$userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}','{$password}', '{$email}', NULL, 0, NULL, '{$userlvl}', NULL)"; 
+		$userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}','{$hashPassword}', '{$email}', NULL, 0, NULL, '{$userlvl}', NULL)"; 
 		// echo $userString;
 		$userQuery = mysqli_query($link, $userString);
 		if($userQuery) {
@@ -42,10 +46,10 @@ function sendMessage($email, $fname, $username, $password) {
 function updatePass($id, $newPassword) {
 		include('connect.php');
 		//should run the mysqli_real_escape_string here.. this should all be cleaned and escaped so no quotes happen
-
+		$hashPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 		//very important that this is stated correctly
 		//null means do whatever it is you want to do on your end mysql
-		$userString = "UPDATE tbl_user SET user_pass = '{$newPassword}' WHERE user_id = {$id}"; 
+		$userString = "UPDATE tbl_user SET user_pass = '{$hashPassword}' WHERE user_id = {$id}"; 
 		// echo $userString;
 		$userQuery = mysqli_query($link, $userString);
 		if($userQuery) {
