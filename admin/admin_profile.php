@@ -21,9 +21,9 @@ confirm_logged_in();
 // }
 
 if(isset($_POST['submit'])) {
-	$oldPassword = $_POST['oldPassword'];
-	$newPassword = $_POST['newPassword'];
-	$newPasswordConfirm = $_POST['newPasswordConfirm'];
+	$oldPassword = trim($_POST['oldPassword']);
+	$newPassword = trim($_POST['newPassword']);
+	$newPasswordConfirm = trim($_POST['newPasswordConfirm']);
 	$id = $_SESSION['user_id'];
 	if(empty($newPasswordConfirm)) {
 		$message = "please confirm passwords";
