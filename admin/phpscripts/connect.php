@@ -5,10 +5,11 @@
 	$url = "localhost";
 	$db = "db_research3014";
 
-	// $user = "nmastrac_alexand";
-	// $pass = "PotatoTomato4$";
-	// $url = "gator4091.hostgator.com";
-	// $db = "nmastrac_db_nammie";
+//FOR YOUR HOSTING CREDENTIALS, JUSTIN
+	// $user = "";
+	// $pass = "";
+	// $url = "";
+	// $db = "";
 	
 	$link = mysqli_connect($url, $user, $pass, $db); //Mac
 	//$link = mysqli_connect($url, $user, $pass, $db); //PC

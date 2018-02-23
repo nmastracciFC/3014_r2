@@ -26,14 +26,12 @@ error_reporting(E_ALL);
 
 function sendMessage($email, $fname, $username, $password) {
 	$to = $email; 
-	$subj = "ZOU: Your Login info"; 
-	// $extra = "Reply-To: ".$email; 
-	$msg = "Oh Hey, ".$fname."\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$password."\n\n Thank you for your business! \n\nThe ZOU team" ;
-	
-	// mail($to, $subj, $msg); 
-	// $direct = $direct."?name={$name}";
-	echo $msg;
-	// redirect_to("admin_index.php");
+	$subj = "ZOU: Your Login info";  
+	$msg = "Oh Hey, ".$fname."!\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$password."\n\n Thank you for your business! \n\nThe ZOU team" ;
+	//JUSTIN, COMMENT OUT LINES 32 AND 33 AND UNCOMMENT LINE 34 IF YOU ARE ON LOCALHOST TO VIEW WHAT YOUR NEW USERS RANDOM PASSWORD WILL BE
+			mail($to, $subj, $msg); 
+			redirect_to("admin_index.php");
+			// echo $msg;
 }
 
 
@@ -43,7 +41,7 @@ function updatePass($id, $newPassword) {
 		$hashPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
 		$userString = "UPDATE tbl_user SET user_pass = '{$hashPassword}' WHERE user_id = {$id}"; 
-		// echo $userString;
+	
 		$userQuery = mysqli_query($link, $userString);
 		if($userQuery) {
 			redirect_to("admin_index.php");

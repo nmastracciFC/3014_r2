@@ -5,13 +5,9 @@
  	$password = trim(mysqli_real_escape_string($link, $password));
 
  	$loginuser = "SELECT * FROM tbl_user WHERE user_name = '{$username}'";
- 	// $loginpass = "SELECT * FROM tbl_user WHERE user_pass = '{$password}'";
-
-// password_verify($password, "SELECT * FROM tbl_user WHERE user_pass = '{$password}'");
- 	// echo $loginpass;
+ 	
  	$user_set = mysqli_query($link, $loginuser);
- 	// $user_set2 = mysqli_query($link, $loginpass);
- 	// print_r(mysqli_num_rows($user_set));
+ 
 
  	if(mysqli_num_rows($user_set)){
  		//this works as a boolean
