@@ -6,22 +6,35 @@ error_reporting(E_ALL);
 require_once('phpscripts/config.php');
 
 //for testing purposes below is commented but this should be uncommented in real life so people don't have access
-confirm_logged_in();
+// confirm_logged_in();
+
+
+	$one = ['gently','slowly','closely','quickly','swiftly','sweetly','merrily','happily','joyfully','angrily'];
+	$two = ['getting','taking','breaking','loving','having','being','seeing','looking','forgetting','jumping'];
+	$three = ['wet','down','around','through', 'beside','nextto','afar','away','toward','betwixt', 'between'];
+	$randomOne = array_rand(array_flip($one), 1);
+	$randomTwo = array_rand(array_flip($two), 1);
+	$randomThree = array_rand(array_flip($three), 1);
+
+	$randomPassword = $randomOne.$randomTwo.$randomThree;
+
+
+
 
 if(isset($_POST['submit'])) {
 	$fname = trim($_POST['fname']);
 	$username = trim($_POST['username']);
-	$password = trim($_POST['password']);
+	$randomPassword = trim($_POST['password']);
 	$email = trim($_POST['email']);
 	$userlvl = $_POST['userlvl'];
 //people may miss the user level so if its empty give people an error message
 	if(empty($userlvl)) {
 		$message = "please select a user level";
 	} else {
-		$result = createUser($fname, $username, $password, $email, $userlvl);
+		$result = createUser($fname, $username, $randomPassword, $email, $userlvl);
 		$message = $result;
 		if(!empty($email)) {
-		$sendEmail = sendMessage($email, $fname, $username, $password);
+		$sendEmail = sendMessage($email, $fname, $username, $randomPassword);
 	} 
 	}
 
@@ -72,8 +85,10 @@ if(isset($_POST['submit'])) {
 		<label>Username: </label>
 		<input type="text" name="username" value="<?php if(!empty($username)) {echo $username;} ?>"><br>
 
-		<label>Password: </label>
-		<input type="text" name="password" value="<?php if(!empty($password)) {echo $password;} ?>"><br>
+		<label>Password will be randomly generated and emailed to user</label><br>
+
+		<!-- <label>Password: </label>
+		<input type="text" name="password" ><br> -->
 
 		<label>Email: </label>
 		<input type="text" name="email" value="<?php if(!empty($email)) {echo $email;} ?>"><br>

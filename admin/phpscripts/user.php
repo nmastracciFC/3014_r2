@@ -26,11 +26,11 @@ error_reporting(E_ALL);
 
 
 
-function sendMessage($email, $fname, $username, $password) {
+function sendMessage($email, $fname, $username, $randomPassword) {
 	$to = $email; 
 	$subj = "ZOU: Your Login info"; 
 	// $extra = "Reply-To: ".$email; 
-	$msg = "Oh Hey, ".$fname."\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$password."\n\n Thank you for your business  " ;
+	$msg = "Oh Hey, ".$fname."\n\nYour ZOU consultant has created an account to get you started on your lipstick journey with us. Please make sure to login and change your password.\n\nHere are your credentials:\n\nUsername: ".$username."\n\nPassword: ".$randomPassword."\n\n Thank you for your business  " ;
 	
 	mail($to, $subj, $msg); 
 	// $direct = $direct."?name={$name}";
@@ -39,21 +39,20 @@ function sendMessage($email, $fname, $username, $password) {
 }
 
 
-function updatePass($newPassword) {
+function updatePass($id, $newPassword) {
 		include('connect.php');
 		//should run the mysqli_real_escape_string here.. this should all be cleaned and escaped so no quotes happen
 
 		//very important that this is stated correctly
 		//null means do whatever it is you want to do on your end mysql
-		$userString = "UPDATE tbl_user VALUES(NULL, '{$fname}', '{$username}','{$password}', '{$email}', NULL, 0, NULL, '{$userlvl}', NULL)"; 
+		$userString = "UPDATE tbl_user SET user_pass = '{$newPassword}' WHERE user_id = {$id}"; 
 		// echo $userString;
 		$userQuery = mysqli_query($link, $userString);
 		if($userQuery) {
-			$sendMail = sendMessage($email, $fname, $username, $password);
-			// redirect_to("admin_index.php");
+			redirect_to("admin_index.php");
 
 		} else {
-			$message = "There was a problem setting up that user. Reconsider your life.";
+			$message = "An issue has occurred. Password has NOT been changed. Please try again.";
 			return $message;
 		}
 
