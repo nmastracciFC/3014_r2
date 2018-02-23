@@ -19,23 +19,22 @@ require_once('phpscripts/config.php');
 	$randomPassword = $randomOne.$randomTwo.$randomThree;
 
 
-
-
 if(isset($_POST['submit'])) {
 	$fname = trim($_POST['fname']);
 	$username = trim($_POST['username']);
-	$randomPassword = trim($_POST['password']);
+	$password = $randomPassword;
 	$email = trim($_POST['email']);
 	$userlvl = $_POST['userlvl'];
+	
 //people may miss the user level so if its empty give people an error message
 	if(empty($userlvl)) {
 		$message = "please select a user level";
 	} else {
-		$result = createUser($fname, $username, $randomPassword, $email, $userlvl);
+		$result = createUser($fname, $username, $password, $email, $userlvl);
 		$message = $result;
-		if(!empty($email)) {
-		$sendEmail = sendMessage($email, $fname, $username, $randomPassword);
-	} 
+		// if(!empty($email)) {
+		// $sendEmail = sendMessage($email, $fname, $username, $password);
+	// } 
 	}
 
 }

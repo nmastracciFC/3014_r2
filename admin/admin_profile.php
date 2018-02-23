@@ -8,16 +8,37 @@ require_once('phpscripts/config.php');
 //for testing purposes below is commented but this should be uncommented in real life so people don't have access
 confirm_logged_in();
 
-if($newPassword === $newPasswordConfirm && isset($_POST['submit'])) {
-	$newPassword = trim($_POST['newPassword']);
+// if($newPassword === $newPasswordConfirm && isset($_POST['submit'])) {
+// 	$newPassword = trim($_POST['newPassword']);
 	
-//people may miss the user level so if its empty give people an error message
+// //people may miss the user level so if its empty give people an error message
+// 	if(empty($newPasswordConfirm)) {
+// 		$message = "please confirm passwords";
+// 	} else {
+// 		$result = updatePass($newPassword);
+// 		$message = $result;
+// 	}
+// }
+
+if(isset($_POST['submit'])) {
+	$oldPassword = $_POST['oldPassword'];
+	$newPassword = $_POST['newPassword'];
+	$newPasswordConfirm = $_POST['newPasswordConfirm'];
+	$id = $_SESSION['user_id'];
 	if(empty($newPasswordConfirm)) {
 		$message = "please confirm passwords";
 	} else {
-		$result = updatePass($newPassword);
-		$message = $result;
+		if(strcmp($newPassword, $newPasswordConfirm) == 0) {
+			$result = updatePass($id, $newPassword);
+			$message = $result;
+		} else {
+			$message = "new passwords do not match";
+		
+		}
+
+		// echo $newPassword.$newPasswordConfirm;
 	}
+
 }
 
 
@@ -63,13 +84,13 @@ if($newPassword === $newPasswordConfirm && isset($_POST['submit'])) {
 	<!-- action says run on this page -->
 	<form action="admin_profile.php" method="post">
 		<label>Old Password: </label>
-		<input type="text" name="oldPassword" value="<?php if(!empty($oldPassword)) {echo $oldPassword;} ?>" ><br>
+		<input type="text" name="oldPassword"  ><br>
 
 		<label>New Password: </label>
-		<input type="text" name="newPassword" value="<?php if(!empty($newPassword)) {echo $newPassword;} ?>"><br>
+		<input type="text" name="newPassword"><br>
 
 		<label>Confirm New Password: </label>
-		<input type="text" name="newPasswordConfirm" value="<?php if(!empty($newPasswordConfirm)) {echo $newPasswordConfirm;} ?>"><br>
+		<input type="text" name="newPasswordConfirm"><br>
 
 		<input type="submit" name="submit" value="Change Password" ><br>
 

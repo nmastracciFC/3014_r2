@@ -8,11 +8,17 @@ Database is in db folder.
 
 -last semester example
 
--
+-my brain parts
 
 ##### creating password generator #####
 
 -http://php.net/manual/en/function.array-rand.php
+
+-https://www.w3schools.com/php/php_mysql_update.asp
+
+##### storing new password #####
+
+-https://dzone.com/articles/how-compare-strings-php
 
 ##### encrypted password stored in database #####
 
