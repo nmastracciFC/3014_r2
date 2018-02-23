@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 
 require_once('phpscripts/config.php');
 
-//for testing purposes below is commented but this should be uncommented in real life so people don't have access
-// confirm_logged_in();
+confirm_logged_in();
 
 
 	$one = ['gently','slowly','closely','quickly','swiftly','sweetly','merrily','happily','joyfully','angrily'];
@@ -25,16 +24,12 @@ if(isset($_POST['submit'])) {
 	$password = $randomPassword;
 	$email = trim($_POST['email']);
 	$userlvl = $_POST['userlvl'];
-	
-//people may miss the user level so if its empty give people an error message
 	if(empty($userlvl)) {
 		$message = "please select a user level";
 	} else {
 		$result = createUser($fname, $username, $password, $email, $userlvl);
 		$message = $result;
-		// if(!empty($email)) {
-		// $sendEmail = sendMessage($email, $fname, $username, $password);
-	// } 
+		
 	}
 
 }
@@ -76,7 +71,7 @@ if(isset($_POST['submit'])) {
 	<div class="addUser">
 	<h1>Create a New Subscriber</h1>
 	<?php if(!empty($message)) {echo $message;} ?>
-	<!-- action says run on this page -->
+
 	<form action="admin_createuser.php" method="post">
 		<label>First Name: </label>
 		<input type="text" name="fname" value="<?php if(!empty($fname)) {echo $fname;} ?>" ><br>
@@ -85,9 +80,6 @@ if(isset($_POST['submit'])) {
 		<input type="text" name="username" value="<?php if(!empty($username)) {echo $username;} ?>"><br>
 
 		<label>Password will be randomly generated and emailed to user</label><br>
-
-		<!-- <label>Password: </label>
-		<input type="text" name="password" ><br> -->
 
 		<label>Email: </label>
 		<input type="text" name="email" value="<?php if(!empty($email)) {echo $email;} ?>"><br>

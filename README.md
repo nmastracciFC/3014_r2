@@ -24,3 +24,7 @@ Database is in db folder.
 
 -http://php.net/manual/en/faq.passwords.php
 
+-http://php.net/manual/en/function.password-hash.php
+
+-http://php.net/manual/en/function.password-verify.php
+
